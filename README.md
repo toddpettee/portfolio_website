@@ -1,2 +1,2 @@
-# personal_website
-This is my personal website - toddpettee.com
+# portfolio_website
+This is my personal portfolio website - toddpettee.com
