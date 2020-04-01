@@ -1397,27 +1397,25 @@ there.
     grid-column: 1 / -1;
     justify-self: center;
     align-self: start; }
-  .skills__img {
-    filter: grayscale(100%); }
-    .skills__img-1 {
-      width: 50px; }
-    .skills__img-2 {
-      width: 50px; }
-    .skills__img-3 {
-      width: 70px; }
-    .skills__img-4 {
-      padding-top: 5px;
-      width: 70px; }
-    .skills__img-5 {
-      width: 60px; }
-    .skills__img-6 {
-      width: 160px; }
-    .skills__img-7 {
-      padding-top: 10px;
-      width: 90px; }
-    .skills__img-8 {
-      padding-top: 5px;
-      width: 90px; }
+  .skills__img-1 {
+    width: 50px; }
+  .skills__img-2 {
+    width: 50px; }
+  .skills__img-3 {
+    width: 70px; }
+  .skills__img-4 {
+    padding-top: 5px;
+    width: 70px; }
+  .skills__img-5 {
+    width: 60px; }
+  .skills__img-6 {
+    width: 160px; }
+  .skills__img-7 {
+    padding-top: 10px;
+    width: 90px; }
+  .skills__img-8 {
+    padding-top: 5px;
+    width: 90px; }
 
 .about {
   display: grid;
