@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Todd Pettee | Frontend Website Developer</title>
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+    <script src="https://use.fontawesome.com/18194e153e.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,300,400,600,700,800,900&display=swap" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+    <a id="scroll-to-home"></a>
+    <header class="header">
+        <div class="header__logo">
+            <!-- <img src="img/logo.png" alt="" class="header__logo-img"> -->
+            <h1 class="header__logo-text">todd pettee</h1>
+        </div>
+        
+        <div onclick="toggleMenu()" class="header__nav-icon">
+            <span class="header__nav-lines"></span>
+        </div>
+
+        <nav class="header__nav" style="display: none;">
+            <ul class="header__nav-list">
+                <li onclick="hideMenu()" class="header__nav-item"><a href="#scroll-to-home" class="header__nav-link">Home</a></li>
+                <li onclick="hideMenu()" class="header__nav-item"><a href="#scroll-to-projects" class="header__nav-link">Projects</a></li>
+                <li onclick="hideMenu()" class="header__nav-item"><a href="#scroll-to-skills" class="header__nav-link">Skills</a></li>
+                <li onclick="hideMenu()" class="header__nav-item"><a href="#scroll-to-about" class="header__nav-link">About</a></li>
+                <li onclick="hideMenu()" class="header__nav-item"><a href="#scroll-to-contact" class="header__nav-link">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="main">
+        <section class="project-details">
+            <h1 class="project-details__title">Social App Website</h1>
+            <img src="img/huddle-screenshot.png" alt="" class="project-details__img">
+            <div class="project-details__list">
+                <h5 class="project-details__name"><span>Name:&nbsp;</span> Huddle</h5>
+                <h5 class="project-details__technologies"><span>Skills:&nbsp;</span> HTML, CSS, Sass</h5>
+                <h5 class="project-details-concept">Concept</h5>
+                <p class="project-details-description">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                </p>
+            </div>
+        </section>
+
+        <a id="scroll-to-contact"></a>
+        <section class="contact">
+            <h2 class="contact__heading">Contact</h2>
+            <div class="contact__icon-box">
+                <svg class="contact__icon">
+                    <a href="https://linkedin.com/in/toddpettee" target="_blank" class="contact__icon-link">
+                        <use href="img/sprite.svg#linkedin-icon-white"></use>
+                    </a>
+                </svg>
+            </div>
+            <div class="contact__icon-box">
+                <svg class="contact__icon">
+                    <a href="https://github.com/tpettee" target="_blank" class="contact__icon-link">
+                        <use href="img/sprite.svg#github-icon-white"></use>
+                    </a>
+                </svg>
+            </div>
+            <div class="contact__icon-box">
+                <svg class="contact__icon">
+                    <a href="mailto:hello@toddpettee.com" class="contact__icon-link">
+                        <use href="img/sprite.svg#mail-icon-white"></use>
+                    </a>
+                </svg>
+            </div>
+            <div class="contact__resume">
+                <a href="img/todd-pettee-resume.pdf" target="_blank" class="contact__resume-button"><i class="fa fa-xs fa-file-text contact__resume-button-icon" aria-hidden="true"></i>Resume</a>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <p class="footer__copyright">Built with <a href="http://bemskel.com" class="footer__link">BEMSkel</a></p>
+    </footer>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

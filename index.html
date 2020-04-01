@@ -1,18 +1,159 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Todd Pettee | Frontend Website Developer</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+    <script src="https://use.fontawesome.com/18194e153e.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,300,400,600,700,800,900&display=swap" rel="stylesheet" type="text/css">
 </head>
+
 <body>
-    <h1>Todd Pettee</h1>
-    
-    
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <a id="scroll-to-home"></a>
+    <header class="header">
+        <div class="header__logo">
+            <!-- <img src="img/logo.png" alt="" class="header__logo-img"> -->
+            <h1 class="header__logo-text">todd pettee</h1>
+        </div>
+        
+        <div onclick="toggleMenu()" class="header__nav-icon">
+            <span class="header__nav-lines"></span>
+        </div>
+
+        <nav class="header__nav" style="display: none;">
+            <ul class="header__nav-list">
+                <li onclick="hideMenu()" class="header__nav-item"><a href="#scroll-to-home" class="header__nav-link">Home</a></li>
+                <li onclick="hideMenu()" class="header__nav-item"><a href="#scroll-to-projects" class="header__nav-link">Projects</a></li>
+                <li onclick="hideMenu()" class="header__nav-item"><a href="#scroll-to-skills" class="header__nav-link">Skills</a></li>
+                <li onclick="hideMenu()" class="header__nav-item"><a href="#scroll-to-about" class="header__nav-link">About</a></li>
+                <li onclick="hideMenu()" class="header__nav-item"><a href="#scroll-to-contact" class="header__nav-link">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="main">
+        <section class="cta">
+            <!-- <h1 class="cta__heading">I code pixel perfect websites that look exactly the way they were designed</h1> -->
+            <h1 class="cta__heading">Front-end developer with a passion for coding pixel-perfect websites</h1>
+            <a href="#scroll-to-projects" class="cta__button">See My Work</a>
+        </section>
+
+        <a id="scroll-to-projects"></a>
+        <section class="project">
+            <h2 class="project__heading">Projects</h2>
+            <div class="project__container">
+                <img src="img/natours-screenshot.png" alt="" class="project__img">
+                <a href="natours.html" target="_blank" class="project__link">
+                    <div class="project__overlay">
+                        <h5 class="project__caption">Travel Agency Website</h5>
+                    </div>
+                </a>
+            </div>
+            <div class="project__container">
+                <img src="img/huddle-screenshot.png" alt="" class="project__img">
+                <a href="huddle.html" target="_blank" class="project__link">
+                    <div class="project__overlay">
+                        <h5 class="project__caption">Social App Website</h5>
+                    </div>
+                </a>
+            </div>
+            <div class="project__container">
+                <img src="img/nexter-screenshot.png" alt="" class="project__img">
+                <a href="natours.html" target="_blank" class="project__link">
+                    <div class="project__overlay">
+                        <h5 class="project__caption">Real Estate Website</h5>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+        <a id="scroll-to-skills"></a>
+        <section class="skills">
+            <h2 class="skills__heading">Skills</h2>
+            <div class="skills__container">
+                <img src="img/html-logo.png" alt="" class="skills__img skills__img-1">
+            </div>
+            <div class="skills__container">
+                <img src="img/css-logo.png" alt="" class="skills__img skills__img-2">
+            </div>
+            <div class="skills__container">
+                <img src="img/sass-logo.png" alt="" class="skills__img skills__img-3">
+            </div>
+            <div class="skills__container">
+                <img src="img/bootstrap-square.png" alt="" class="skills__img skills__img-4">
+            </div>
+            <div class="skills__container">
+                <img src="img/javascript-logo.png" alt="" class="skills__img skills__img-5">
+            </div>
+            <div class="skills__container">
+                <img src="img/react-logo-large.png" alt="" class="skills__img skills__img-6">
+            </div>
+            <div class="skills__container">
+                <img src="img/npm-logo.png" alt="" class="skills__img skills__img-7">
+            </div>
+            <div class="skills__container">
+                <img src="img/git-logo.png" alt="" class="skills__img skills__img-8">
+            </div>
+        </section>
+
+        <a id="scroll-to-about"></a>
+        <section class="about">
+            <h2 class="about__heading">About</h2>
+            <img src="img/todd-avatar.jpg" alt="" class="about__img">
+            <span class="about__caption">Todd Pettee<br>Front-end Developer</span>
+            <div class="about__story">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                    incididunt ut labore et
+                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+                    aliquip
+                    ex ea commodo consequat.</p>
+                <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+                    fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
+                    deserunt mollit anim id est laborum.</p>
+                <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+                    fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
+                    deserunt mollit anim id est laborum.</p>
+            </div>
+        </section>
+
+        <a id="scroll-to-contact"></a>
+        <section class="contact">
+            <h2 class="contact__heading">Contact</h2>
+            <div class="contact__icon-box">
+                <svg class="contact__icon">
+                    <a href="https://linkedin.com/in/toddpettee" target="_blank" class="contact__icon-link">
+                        <use href="img/sprite.svg#linkedin-icon-white"></use>
+                    </a>
+                </svg>
+            </div>
+            <div class="contact__icon-box">
+                <svg class="contact__icon">
+                    <a href="https://github.com/tpettee" target="_blank" class="contact__icon-link">
+                        <use href="img/sprite.svg#github-icon-white"></use>
+                    </a>
+                </svg>
+            </div>
+            <div class="contact__icon-box">
+                <svg class="contact__icon">
+                    <a href="mailto:hello@toddpettee.com" class="contact__icon-link">
+                        <use href="img/sprite.svg#mail-icon-white"></use>
+                    </a>
+                </svg>
+            </div>
+            <div class="contact__resume">
+                <a href="img/todd-pettee-resume.pdf" target="_blank" class="contact__resume-button"><i class="fa fa-xs fa-file-text contact__resume-button-icon" aria-hidden="true"></i>Resume</a>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <p class="footer__copyright">Built with <a href="http://bemskel.com" class="footer__link">BEMSkel</a></p>
+    </footer>
+    <script src="js/main.js"></script>
 </body>
+
 </html>

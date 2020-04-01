@@ -1,0 +1,41 @@
+.project-details {
+    display: grid;
+    grid-template-columns: minmax(35rem, 45rem) minmax(30rem, 40rem);
+    grid-template-rows: 15rem minmax(15rem, 1fr) 10rem minmax(15rem, 1fr);
+    grid-column-gap: 10rem;
+    justify-content: center;
+
+    padding: 15rem 10rem 25rem 10rem;
+    
+
+    &__title {
+        grid-column: 1 / -1;
+        justify-self: center;
+        align-self: start;
+    }
+
+    &__img {
+        box-shadow: 0 0 5rem 0 rgba(0, 0, 0, 0.1);
+    }
+
+    &__name {
+        font-weight: 100;
+        font-size: 1.8rem;
+        margin-bottom: .5rem;
+
+        & span {
+            font-weight: 500;
+            font-size: 2rem;
+        }
+    }
+
+    &__technologies {
+        font-weight: 100;
+        font-size: 1.8rem;
+
+        & span {
+            font-weight: 500;
+            font-size: 2rem;
+        }
+    }
+}
