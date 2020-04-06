@@ -14,6 +14,10 @@ $line-height:            2.4rem !default;
 $global-radius:          .2rem !default;
 $border-color:            #bbb !default;
 
+/// Shadow
+$box-shadow-light:              0 0 5rem 0 rgba(0, 0, 0, 0.1);
+$box-shadow-dark:              0 0 5rem 0 rgba(0, 0, 0, 0.2);
+
 // Font variables
 $font-sans-serif: "Roboto", Helvetica, Arial, sans-serif !default;
 $font-serif:       "Merriweather", Georgia, "Times New Roman", Times, serif;
@@ -53,6 +57,7 @@ $color-link--hover:     darken($color-link, 10%) !default;
 $color-link--active:    #D44076 !default;
 
 $white:         #ffffff !default;
+
 
 /// Copy text color
 /// @type Color

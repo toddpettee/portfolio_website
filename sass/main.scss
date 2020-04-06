@@ -34,13 +34,13 @@
   'components/lists',
   'components/pagination',
   'components/tables',
-  'components/media-queries'; //no content, just documentation
-
+  'components/media-queries', //no content, just documentation
+  'components/popup';
 
 // 6. Page-specific styles
 @import
   'pages/home',
-  'pages/huddle';
+  'pages/projects';
 
 // 7. Themes
 @import

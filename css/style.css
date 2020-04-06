@@ -1183,6 +1183,76 @@ near the relevant code. For example, if you wanted to change the styles for butt
 on small devices, paste the mobile query code up in the buttons section and style it
 there.
 */
+.popup {
+  height: 100vh;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(34, 34, 34, 0.8);
+  z-index: 3000;
+  opacity: 0;
+  visibility: hidden;
+  transition: all .3s; }
+  @supports (-webkit-backdrop-filter: blur(10px)) or (backdrop-filter: blur(10px)) {
+    .popup {
+      -webkit-backdrop-filter: blur(10px), brightness(20%);
+      backdrop-filter: blur(10px);
+      background-color: rgba(34, 34, 34, 0.3); } }
+  .popup:target {
+    opacity: 1;
+    visibility: visible; }
+  .popup:target .popup__content {
+    opacity: 1;
+    transform: translate(50%, 50%) scale(1); }
+  .popup__close:link, .popup__close:visited {
+    color: #7e7e7e;
+    position: absolute;
+    top: 2.5rem;
+    right: 2.5rem;
+    font-size: 3rem;
+    text-decoration: none;
+    display: inline-block;
+    transition: all .2s;
+    line-height: 1rem; }
+  .popup__close:hover {
+    color: #3498db; }
+  .popup__content {
+    width: 50%;
+    background-color: #ffffff;
+    box-shadow: 0 2rem 4rem rgba(34, 34, 34, 0.2);
+    border-radius: 3px;
+    display: table;
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.25);
+    transition: all .4s .2s;
+    overflow: hidden; }
+  .popup__left {
+    width: 33.333333%;
+    display: table-cell; }
+  .popup__right {
+    width: 66.666666%;
+    display: table-cell;
+    vertical-align: middle;
+    padding: 3rem 5rem; }
+  .popup__img {
+    display: block;
+    width: 100%;
+    margin-bottom: -2px; }
+  .popup__text {
+    font-size: 1.4rem;
+    margin-bottom: 4rem;
+    column-count: 2;
+    column-gap: 4rem;
+    column-rule: 1px solid #d3d3d3;
+    -moz-column-count: 2;
+    -moz-column-gap: 4rem;
+    -moz-column-rule: 1px solid #d3d3d3;
+    -moz-hyphens: auto;
+    -ms-hyphens: auto;
+    -webkit-hyphens: auto;
+    hyphens: auto; }
+
 .header {
   height: 10rem;
   padding: 0 5rem;
@@ -1208,16 +1278,17 @@ there.
     top: 0;
     right: 0;
     z-index: 100;
-    transition: transform .8s;
-    width: 0; }
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.97); }
     .header__nav-icon {
       position: fixed;
       cursor: pointer;
       z-index: 200;
-      width: 4rem;
+      width: 3rem;
       height: 3.5rem;
       top: 3.5rem;
-      right: 4.5rem; }
+      right: 5rem; }
     .header__nav-list {
       display: flex;
       flex-direction: column;
@@ -1227,28 +1298,28 @@ there.
       left: 0;
       height: 100vh;
       width: 100%;
-      background-image: radial-gradient(#ccc, #eee);
-      transition: all .8s; }
-    .header__nav-lines {
-      position: fixed;
-      top: 5rem;
-      right: 5rem;
-      cursor: pointer;
-      width: 3rem;
-      height: 4rem; }
-      .header__nav-lines, .header__nav-lines::before, .header__nav-lines::after {
-        width: 3rem;
-        height: 4px;
-        background-color: #222222;
-        display: inline-block; }
-      .header__nav-lines::before, .header__nav-lines::after {
-        content: "";
-        position: absolute;
-        right: 0; }
-      .header__nav-lines::before {
-        top: -.8rem; }
-      .header__nav-lines::after {
-        top: .8rem; }
+      z-index: 200; }
+    .header__nav-line-1, .header__nav-line-2, .header__nav-line-3 {
+      width: 3.2rem;
+      height: 4px;
+      border-radius: 8px;
+      background-color: #222222;
+      display: inline-block;
+      cursor: pointer; }
+    .header__nav-line-1 {
+      position: absolute;
+      top: .5rem;
+      right: 0; }
+    .header__nav-line-2 {
+      position: absolute;
+      top: 1.5rem;
+      right: 0; }
+      .header__nav-line-2:active {
+        display: none; }
+    .header__nav-line-3 {
+      position: absolute;
+      top: 2.5rem;
+      right: 0rem; }
     .header__nav-item {
       font-family: 'Nunito', sans-serif;
       font-weight: 400;
@@ -1261,33 +1332,46 @@ there.
       margin-bottom: 1rem;
       line-height: 1.5; }
     .header__nav-link {
-      color: #222222; }
+      color: #d3d3d3; }
       .header__nav-link:link, .header__nav-link:visited {
         padding: 1rem 5rem;
-        color: #222222;
+        color: #ffffff;
         transition: all .2s; }
       .header__nav-link:hover, .header__nav-link:active {
-        background-color: #222222;
-        color: #ffffff; }
+        background-color: #d3d3d3;
+        color: #222222; }
+
+.header__nav-icon.close .header__nav-line-2 {
+  display: none; }
+
+.header__nav-icon.close .header__nav-line-1 {
+  transform: rotate(135deg) translate(5px, -6px);
+  width: 3.6rem;
+  background-color: #d3d3d3; }
+
+.header__nav-icon.close .header__nav-line-3 {
+  transform: rotate(45deg) translate(-7px, -10px);
+  width: 3.6rem;
+  background-color: #d3d3d3; }
 
 .cta {
   height: calc(100vh - 10rem);
   max-width: 1450px;
   margin: 0 auto;
-  padding: 10rem 10rem 15rem 10rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-content: center; }
+  padding: 16rem 10rem 15rem 10rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr; }
   .cta__heading {
     font-size: 10rem;
     padding-bottom: 3rem;
     font-family: 'Nunito', sans-serif;
-    align-self: flex-start;
     font-weight: 400; }
   .cta__button {
     transition: all .2s ease;
-    transform: scale(0.98, 0.98); }
+    transform: scale(0.98, 0.98);
+    justify-self: start;
+    align-self: start; }
     .cta__button, .cta__button:link, .cta__button:visited {
       font-family: 'Nunito', sans-serif;
       font-weight: 400;
@@ -1295,8 +1379,7 @@ there.
       color: #ffffff;
       background-color: #222222;
       padding: 1.5rem 8rem;
-      border-radius: .5rem;
-      align-self: flex-start; }
+      border-radius: .5rem; }
     .cta__button:hover {
       background-color: #222222;
       color: #ffffff;
@@ -1324,7 +1407,7 @@ there.
     .project__container:hover .project__overlay {
       opacity: 1; }
   .project__img {
-    box-shadow: 1rem 1rem 10rem rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 5rem 0 rgba(0, 0, 0, 0.2);
     transition: all .2s ease;
     display: block;
     width: 100%; }
@@ -1520,32 +1603,70 @@ there.
   color: #7e7e7e;
   font-weight: 500; }
 
+.page--huddle .header {
+  background-color: #f6f6f6; }
+
 .project-details {
   display: grid;
   grid-template-columns: minmax(35rem, 45rem) minmax(30rem, 40rem);
-  grid-template-rows: 15rem minmax(15rem, 1fr) 10rem minmax(15rem, 1fr);
+  grid-template-rows: 10rem minmax(10rem, 1fr);
   grid-column-gap: 10rem;
+  row-gap: 6rem;
   justify-content: center;
-  padding: 15rem 10rem 25rem 10rem; }
+  padding: 10rem 10rem 15rem 10rem;
+  background-color: #f6f6f6; }
   .project-details__title {
     grid-column: 1 / -1;
     justify-self: center;
-    align-self: start; }
+    align-self: start;
+    padding-bottom: 3rem; }
   .project-details__img {
-    box-shadow: 0 0 5rem 0 rgba(0, 0, 0, 0.1); }
+    box-shadow: 0 0 5rem 0 rgba(0, 0, 0, 0.2);
+    display: block; }
   .project-details__name {
-    font-weight: 100;
-    font-size: 1.8rem;
     margin-bottom: .5rem; }
     .project-details__name span {
-      font-weight: 500;
-      font-size: 2rem; }
-  .project-details__technologies {
-    font-weight: 100;
-    font-size: 1.8rem; }
-    .project-details__technologies span {
-      font-weight: 500;
-      font-size: 2rem; }
+      font-weight: 500; }
+  .project-details__technologies span {
+    font-weight: 500; }
+  .project-details__concept {
+    font-weight: 500;
+    margin-bottom: 1rem; }
+  .project-details__button--site, .project-details__button--code {
+    margin-top: 1rem;
+    border-radius: 5rem;
+    display: inline-block; }
+  .project-details__button--site {
+    margin-right: 3rem;
+    background-color: #222222;
+    color: #ffffff;
+    border: 2px solid #222222;
+    padding: .7rem 4rem;
+    transition: all .2s; }
+    .project-details__button--site:hover {
+      transform: scale(1.05, 1.05);
+      margin-right: 3rem;
+      padding: .7rem 4rem; }
+  .project-details__button--code {
+    margin-right: 3rem;
+    background-color: transparent;
+    color: #222222;
+    border: 2px solid #222222;
+    padding: .7rem 3rem; }
+    .project-details__button--code:hover {
+      transform: scale(1.05, 1.05);
+      transition: all .2s;
+      margin-right: 3rem;
+      padding: .7rem 3rem; }
+
+.project-process {
+  grid-column: span 2; }
+  .project-process__title {
+    font-weight: 400;
+    padding: 5rem 0 2rem 0;
+    text-align: center; }
+  .project-process__list {
+    padding: 0 3rem; }
 
 .dark {
   background-color: #1d1d1d; }
