@@ -1,0 +1,10 @@
+.menu {
+	display: flex;
+	list-style-type: none;
+    column-gap: 3rem;
+    
+    &__item-link {
+        text-decoration: none;
+        color: #333;
+    }
+}
